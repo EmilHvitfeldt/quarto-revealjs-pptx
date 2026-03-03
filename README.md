@@ -17,7 +17,19 @@ This project demonstrates how to convert a Quarto RevealJS presentation to Power
 quarto render slides.qmd
 ```
 
-### 2. Export to PDF using PDF Export Mode
+### 2. Export to PDF
+
+**Option A: Using decktape (recommended)**
+
+[Decktape](https://github.com/astefanutti/decktape) is a high-quality PDF exporter for HTML presentations.
+
+```bash
+decktape reveal slides.html slides.pdf
+```
+
+Install via npm: `npm install -g decktape`
+
+**Option B: Using PDF Export Mode**
 
 Open the rendered `slides.html` in a browser and add `?print-pdf` to the URL:
 
@@ -55,6 +67,7 @@ zip -r "../slides.pptx" .
 ## Requirements
 
 - [Quarto](https://quarto.org/)
+- [Decktape](https://github.com/astefanutti/decktape) - Install via `npm install -g decktape`
 - [LibreOffice](https://www.libreoffice.org/) - Install via `brew install --cask libreoffice`
 - Source Sans 3 font (or adjust font substitution as needed)
 
