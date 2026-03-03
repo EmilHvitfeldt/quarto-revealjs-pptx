@@ -1,0 +1,102 @@
+---
+title: "quarto-revealjs.pptx"
+author: "Emil Hvitfeldt"
+date: today
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    transition: slide
+---
+
+## Introduction
+
+Welcome to this presentation!
+
+- First point
+- Second point
+- Third point
+
+## Slide with Code
+
+```python
+def hello_world():
+    print("Hello, World!")
+
+def greet(name):
+    message = f"Hello, {name}!"
+    print(message)
+    return message
+
+if __name__ == "__main__":
+    hello_world()
+    greet("Alice")
+```
+
+## Slide with Image
+
+![A beautiful scene](image.jpg)
+
+## ggplot2 Example
+
+```{r}
+#| echo: true
+#| output-location: column
+#| fig-width: 5
+#| fig-height: 4
+library(ggplot2)
+
+ggplot(mtcars, aes(x = wt,
+                   y = mpg,
+                   color = factor(cyl))) +
+  geom_point(size = 3) +
+  labs(title = "MPG vs Weight",
+       x = "Weight (1000 lbs)",
+       y = "Miles per Gallon",
+       color = "Cylinders") +
+  theme_minimal()
+```
+
+## gt Table Example
+
+```{r}
+#| echo: true
+#| output-location: column
+library(gt)
+
+mtcars |>
+  head(5) |>
+  gt() |>
+  tab_header(
+    title = "Motor Trend Cars",
+    subtitle = "Top 5 rows"
+  ) |>
+  fmt_number(
+    columns = c(mpg, disp, hp),
+    decimals = 1
+  )
+```
+
+## LaTeX Example
+
+Inline math: $E = mc^2$
+
+Display math:
+
+$$
+\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
+$$
+
+Matrix notation:
+
+$$
+\mathbf{A} = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}
+$$
+
+## Absolute Positioning
+
+![](img1.jpg){.absolute top=50 left=50 width="200"}
+
+![](img2.jpg){.absolute top=100 right=50 width="200"}
+
+![](img3.jpg){.absolute bottom=50 left=300 width="200"}
